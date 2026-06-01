@@ -1,6 +1,6 @@
 # DeclutterUI
 
-A NeoForge mod for Minecraft 1.21.1 that removes unwanted UI elements so you can just play the game.
+A NeoForge mod for Minecraft that Hide annoying warnings, buttons, and popups
 
 ---
 
@@ -52,29 +52,3 @@ Every option can be turned on or off individually in the in-game config screen.
 | Turn Off Data Collection | Disables Mojang's telemetry / data tracking |
 | Hide Recipe Book Button | Removes the recipe book button from inventory, crafting table, and furnace |
 | Hide Chat Message Indicators | Hides the colored bars shown next to chat messages |
-
----
-
-## Requirements
-
-- Minecraft **1.21.1**
-- [NeoForge](https://neoforged.net/) **21.1.x**
-
----
-
-## Installation
-
-1. Install [NeoForge 21.1.x](https://neoforged.net/) for Minecraft 1.21.1
-2. Download the latest `declutterui-1.0.0.jar` from [Releases](../../releases)
-3. Drop it into your `.minecraft/mods` folder
-4. Launch the game
-
----
-
-## Configuration
-
-Open the in-game mod menu and click **DeclutterUI** → **Config**, or edit the file directly at:
-
-```
-.minecraft/config/declutterui-common.toml
-```
