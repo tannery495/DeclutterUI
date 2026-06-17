@@ -46,7 +46,7 @@ authors="${mod_authors}"
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Declutter removes unwanted UI elements from Minecraft — hides Realms, turns off data collection, suppresses popups, and cleans up menus so you can just play.
+Hide annoying warnings, buttons, and popups
 '''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
