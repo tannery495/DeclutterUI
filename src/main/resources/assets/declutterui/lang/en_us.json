@@ -17,6 +17,7 @@
   "declutterui.configuration.suppressWorldBackupToast": "Hide World Backup Success Popup",
   "declutterui.configuration.suppressResourcePackErrorToasts": "Hide Resource Pack Error Popups (Off by Default)",
   "declutterui.configuration.hideAccessibilityButton": "Hide Accessibility Icon (Title Screen)",
+  "declutterui.configuration.hideLanguageButton": "Hide Language Button (Title Screen)",
   "declutterui.configuration.hidePlayerReporting": "Hide Player Reporting Button",
   "declutterui.configuration.hideOpenToLan": "Hide Open to LAN Button",
   "declutterui.configuration.hideChatIndicators": "Hide Chat Message Indicators",

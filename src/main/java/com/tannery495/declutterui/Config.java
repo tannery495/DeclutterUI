@@ -65,6 +65,10 @@ public class Config {
             .comment("Hide the accessibility shortcut button on the title screen")
             .define("hideAccessibilityButton", true);
 
+    public static final ModConfigSpec.BooleanValue HIDE_LANGUAGE_BUTTON = BUILDER
+            .comment("Hide the language shortcut button on the title screen")
+            .define("hideLanguageButton", true);
+
     public static final ModConfigSpec.BooleanValue HIDE_PLAYER_REPORTING = BUILDER
             .comment("Hide the 'Player Reporting' button from the Game Menu (multiplayer only)")
             .define("hidePlayerReporting", true);
