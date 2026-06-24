@@ -15,6 +15,7 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Online Options Button | The "Online Options" button in Settings |
 | Hide Credits & Attribution Button | The credits button in Settings |
 | Hide Accessibility Icon | The small accessibility icon on the title screen |
+| Hide Language Button | The language shortcut button on the title screen |
 
 ### Warnings & Prompts
 | Option | What it removes |
@@ -39,12 +40,15 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Tutorial Hint Popups | The pop-up hints that appear early in the game |
 | Hide Narrator Toggle Popup | The pop-up when turning the narrator on or off |
 | Hide Unsecure Server Warning | The pop-up warning when joining a server without secure chat |
+| Hide World Backup Success Popup | The notification shown after a world backup completes |
+| Hide Resource Pack Error Popups | Resource-pack load, copy, and file-import failure notifications *(off by default)* |
 
 ### Title Screen
 | Option | What it removes |
 |---|---|
 | Hide Yellow Splash Text | The rotating yellow "Random splash!" text next to the logo |
 | Hide Copyright Notice | The "Copyright Mojang AB. Do not distribute!" text |
+| Hide Version Text | The version and modded text in the bottom-left corner *(off by default)* |
 
 ### Other
 | Option | What it does |
@@ -52,3 +56,4 @@ Every option can be turned on or off individually in the in-game config screen.
 | Turn Off Data Collection | Disables Mojang's telemetry / data tracking |
 | Hide Recipe Book Button | Removes the recipe book button from inventory, crafting table, and furnace |
 | Hide Chat Message Indicators | Hides the colored bars shown next to chat messages |
+| Hide Selected Item Name Popup | Hides item names shown above the hotbar when changing slots *(off by default)* |
