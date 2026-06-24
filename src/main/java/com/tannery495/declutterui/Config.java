@@ -73,6 +73,10 @@ public class Config {
             .comment("Hide the version and modded text in the bottom-left corner of the title screen")
             .define("hideVersionText", false);
 
+    public static final ModConfigSpec.BooleanValue HIDE_SELECTED_ITEM_NAME = BUILDER
+            .comment("Hide item names shown above the hotbar when changing the selected item")
+            .define("hideSelectedItemName", false);
+
     public static final ModConfigSpec.BooleanValue HIDE_PLAYER_REPORTING = BUILDER
             .comment("Hide the 'Player Reporting' button from the Game Menu (multiplayer only)")
             .define("hidePlayerReporting", true);
