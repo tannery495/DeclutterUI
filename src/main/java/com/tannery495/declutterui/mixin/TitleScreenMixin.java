@@ -9,7 +9,9 @@ import net.minecraft.client.gui.components.SpriteIconButton;
 import net.minecraft.client.gui.screens.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TitleScreen.class)
 public abstract class TitleScreenMixin {
@@ -44,6 +46,13 @@ public abstract class TitleScreenMixin {
     private void skipSplashRender(SplashRenderer splash, GuiGraphicsExtractor graphics, int screenWidth, Font font, float alpha) {
         if (!Config.HIDE_SPLASH_TEXT.get()) {
             splash.extractRenderState(graphics, screenWidth, font, alpha);
+        }
+    }
+
+    @Inject(method = {"lambda$extractRenderState$0", "lambda$extractRenderState$1"}, at = @At("HEAD"), cancellable = true)
+    private void hideVersionText(GuiGraphicsExtractor graphics, int alpha, Integer line, String text, CallbackInfo ci) {
+        if (Config.HIDE_VERSION_TEXT.get()) {
+            ci.cancel();
         }
     }
 }

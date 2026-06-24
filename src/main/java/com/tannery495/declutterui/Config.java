@@ -69,6 +69,10 @@ public class Config {
             .comment("Hide the language shortcut button on the title screen")
             .define("hideLanguageButton", true);
 
+    public static final ModConfigSpec.BooleanValue HIDE_VERSION_TEXT = BUILDER
+            .comment("Hide the version and modded text in the bottom-left corner of the title screen")
+            .define("hideVersionText", false);
+
     public static final ModConfigSpec.BooleanValue HIDE_PLAYER_REPORTING = BUILDER
             .comment("Hide the 'Player Reporting' button from the Game Menu (multiplayer only)")
             .define("hidePlayerReporting", true);
