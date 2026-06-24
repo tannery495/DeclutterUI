@@ -53,6 +53,10 @@ public class Config {
             .comment("Suppress the 'This server is not running a secure chat mode' toast when joining servers")
             .define("suppressUnsafeServerToast", true);
 
+    public static final ModConfigSpec.BooleanValue SUPPRESS_WORLD_BACKUP_TOAST = BUILDER
+            .comment("Suppress the popup shown after a world backup completes")
+            .define("suppressWorldBackupToast", true);
+
     public static final ModConfigSpec.BooleanValue HIDE_ACCESSIBILITY_BUTTON = BUILDER
             .comment("Hide the accessibility shortcut button on the title screen")
             .define("hideAccessibilityButton", true);
