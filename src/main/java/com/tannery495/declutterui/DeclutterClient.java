@@ -53,6 +53,12 @@ public class DeclutterClient {
                 && toast instanceof SystemToast sys
                 && sys.getToken() == SystemToast.SystemToastId.WORLD_BACKUP) {
             event.setCanceled(true);
+        } else if (Config.SUPPRESS_RESOURCE_PACK_ERROR_TOASTS.get()
+                && toast instanceof SystemToast sys
+                && (sys.getToken() == SystemToast.SystemToastId.PACK_LOAD_FAILURE
+                || sys.getToken() == SystemToast.SystemToastId.PACK_COPY_FAILURE
+                || sys.getToken() == SystemToast.SystemToastId.FILE_DROP_FAILURE)) {
+            event.setCanceled(true);
         }
     }
 
