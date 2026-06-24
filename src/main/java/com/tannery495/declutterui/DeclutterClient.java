@@ -49,6 +49,10 @@ public class DeclutterClient {
                 && toast instanceof SystemToast sys
                 && sys.getToken() == SystemToast.SystemToastId.UNSECURE_SERVER_WARNING) {
             event.setCanceled(true);
+        } else if (Config.SUPPRESS_WORLD_BACKUP_TOAST.get()
+                && toast instanceof SystemToast sys
+                && sys.getToken() == SystemToast.SystemToastId.WORLD_BACKUP) {
+            event.setCanceled(true);
         }
     }
 

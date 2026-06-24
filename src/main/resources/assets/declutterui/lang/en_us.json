@@ -14,6 +14,7 @@
   "declutterui.configuration.suppressTutorialToasts": "Hide Tutorial Hint Popups",
   "declutterui.configuration.suppressNarratorToast": "Hide Narrator Toggle Popup",
   "declutterui.configuration.suppressUnsafeServerToast": "Hide Unsecure Server Warning Popup",
+  "declutterui.configuration.suppressWorldBackupToast": "Hide World Backup Success Popup",
   "declutterui.configuration.hideAccessibilityButton": "Hide Accessibility Icon (Title Screen)",
   "declutterui.configuration.hidePlayerReporting": "Hide Player Reporting Button",
   "declutterui.configuration.hideOpenToLan": "Hide Open to LAN Button",
