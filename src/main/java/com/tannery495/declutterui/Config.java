@@ -57,6 +57,10 @@ public class Config {
             .comment("Suppress the popup shown after a world backup completes")
             .define("suppressWorldBackupToast", true);
 
+    public static final ModConfigSpec.BooleanValue SUPPRESS_RESOURCE_PACK_ERROR_TOASTS = BUILDER
+            .comment("Suppress resource pack load, copy, and file import failure popups")
+            .define("suppressResourcePackErrorToasts", false);
+
     public static final ModConfigSpec.BooleanValue HIDE_ACCESSIBILITY_BUTTON = BUILDER
             .comment("Hide the accessibility shortcut button on the title screen")
             .define("hideAccessibilityButton", true);
