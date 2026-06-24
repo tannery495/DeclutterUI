@@ -19,6 +19,7 @@
   "declutterui.configuration.hideAccessibilityButton": "Hide Accessibility Icon (Title Screen)",
   "declutterui.configuration.hideLanguageButton": "Hide Language Button (Title Screen)",
   "declutterui.configuration.hideVersionText": "Hide Version Text (Off by Default)",
+  "declutterui.configuration.hideSelectedItemName": "Hide Selected Item Name Popup (Off by Default)",
   "declutterui.configuration.hidePlayerReporting": "Hide Player Reporting Button",
   "declutterui.configuration.hideOpenToLan": "Hide Open to LAN Button",
   "declutterui.configuration.hideChatIndicators": "Hide Chat Message Indicators",
