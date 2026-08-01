@@ -35,6 +35,7 @@
   "declutterui.configuration.hidePlayerReporting": "Hide Player Reporting Button",
   "declutterui.configuration.hideOpenToLan": "Hide Open to LAN Button",
   "declutterui.configuration.hideChatIndicators": "Hide Chat Message Indicators",
+  "declutterui.configuration.hideBossBars": "Hide Boss Bars (Off by Default)",
   "declutterui.configuration.hideOnlineOptions": "Hide Online Options Button",
   "declutterui.configuration.hideSplashText": "Hide Yellow Splash Text (Title Screen)",
   "declutterui.configuration.hideCopyright": "Hide Copyright Notice (Title Screen)",
