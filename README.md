@@ -1,6 +1,16 @@
-# DeclutterUI
+<h1 align="center">
+  <img width="64" height="64" align="center" alt="DeclutterUI icon" src="https://github.com/user-attachments/assets/a35067af-06b1-4dfd-b690-c53f9c6d44a4">
+  DeclutterUI
+</h1>
 
-A NeoForge mod for Minecraft that Hide annoying warnings, buttons, and popups
+<p align="center">
+  <a href="https://modrinth.com/mod/declutterui">Modrinth</a> |
+  <a href="https://www.curseforge.com/minecraft/mc-mods/declutterui">CurseForge</a>
+</p>
+
+<p align="center">
+  A NeoForge mod for Minecraft that hides annoying warnings, buttons, and popups.
+</p>
 
 ---
 
@@ -9,6 +19,7 @@ A NeoForge mod for Minecraft that Hide annoying warnings, buttons, and popups
 Every option can be turned on or off individually in the in-game config screen.
 
 ### Menus & Buttons
+
 | Option | What it removes |
 |---|---|
 | Hide Realms Button | The "Minecraft Realms" button on the title screen |
@@ -18,6 +29,7 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Language Button | The language shortcut button on the title screen |
 
 ### Warnings & Prompts
+
 | Option | What it removes |
 |---|---|
 | Skip Online Play Warning Screen | The "Caution: Third-Party Online Play" screen when clicking Multiplayer |
@@ -26,6 +38,7 @@ Every option can be turned on or off individually in the in-game config screen.
 | Skip World Upgrade Backup Screen | The backup prompt when loading a world from an older version *(off by default)* |
 
 ### Game Menu (Pause Screen)
+
 | Option | What it removes |
 |---|---|
 | Hide Give Feedback & Report Bugs Buttons | The two feedback link buttons |
@@ -33,6 +46,7 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Open to LAN Button | The open to LAN button (singleplayer only) |
 
 ### Notifications
+
 | Option | What it removes |
 |---|---|
 | Hide Advancement Unlock Popups | The pop-up when you unlock an advancement |
@@ -44,6 +58,7 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Resource Pack Error Popups | Resource-pack load, copy, and file-import failure notifications *(off by default)* |
 
 ### Title Screen
+
 | Option | What it removes |
 |---|---|
 | Hide Yellow Splash Text | The rotating yellow "Random splash!" text next to the logo |
@@ -51,9 +66,10 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Version Text | The version and modded text in the bottom-left corner *(off by default)* |
 
 ### Other
+
 | Option | What it does |
 |---|---|
-| Turn Off Data Collection | Disables Mojang's telemetry / data tracking |
+| Turn Off Data Collection | Disables Mojang's telemetry/data tracking |
 | Hide Recipe Book Button | Removes the recipe book button from inventory, crafting table, and furnace |
 | Hide Chat Message Indicators | Hides the colored bars shown next to chat messages |
 | Hide Selected Item Name Popup | Hides item names shown above the hotbar when changing slots *(off by default)* |
