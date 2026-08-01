@@ -35,6 +35,7 @@ public class Config {
 
     public static final ModConfigSpec.BooleanValue HIDE_SELECTED_ITEM_NAME;
     public static final ModConfigSpec.BooleanValue HIDE_CHAT_INDICATORS;
+    public static final ModConfigSpec.BooleanValue HIDE_BOSS_BARS;
 
     public static final ModConfigSpec.BooleanValue DISABLE_TELEMETRY;
 
@@ -132,6 +133,9 @@ public class Config {
         HIDE_CHAT_INDICATORS = bool("declutterui.configuration.hideChatIndicators",
                 "Hide the colored indicator bars shown next to chat messages",
                 "hideChatIndicators", true);
+        HIDE_BOSS_BARS = bool("declutterui.configuration.hideBossBars",
+                "Hide boss names and health bars displayed at the top of the screen",
+                "hideBossBars", false);
         DISABLE_TELEMETRY = bool("declutterui.configuration.disableTelemetry",
                 "Disable all telemetry data collection",
                 "disableTelemetry", true);

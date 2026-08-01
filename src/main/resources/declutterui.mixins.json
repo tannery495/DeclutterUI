@@ -15,6 +15,7 @@
     "ChatComponentMixin",
     "TitleScreenMixin",
     "GuiMixin",
+    "BossHealthOverlayMixin",
     "AccessibilityOnboardingScreenMixin",
     "BackupConfirmScreenMixin"
   ],
