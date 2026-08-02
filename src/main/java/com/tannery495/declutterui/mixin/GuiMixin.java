@@ -18,4 +18,11 @@ public abstract class GuiMixin {
             ci.cancel();
         }
     }
+
+    @Inject(method = "renderScoreboardSidebar", at = @At("HEAD"), cancellable = true)
+    private void hideScoreboardSidebar(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+        if (Config.HIDE_SCOREBOARD_SIDEBAR.get()) {
+            ci.cancel();
+        }
+    }
 }

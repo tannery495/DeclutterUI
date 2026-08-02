@@ -36,6 +36,7 @@ public class Config {
     public static final ModConfigSpec.BooleanValue HIDE_SELECTED_ITEM_NAME;
     public static final ModConfigSpec.BooleanValue HIDE_CHAT_INDICATORS;
     public static final ModConfigSpec.BooleanValue HIDE_BOSS_BARS;
+    public static final ModConfigSpec.BooleanValue HIDE_SCOREBOARD_SIDEBAR;
 
     public static final ModConfigSpec.BooleanValue DISABLE_TELEMETRY;
 
@@ -136,6 +137,9 @@ public class Config {
         HIDE_BOSS_BARS = bool("declutterui.configuration.hideBossBars",
                 "Hide boss names and health bars displayed at the top of the screen",
                 "hideBossBars", false);
+        HIDE_SCOREBOARD_SIDEBAR = bool("declutterui.configuration.hideScoreboardSidebar",
+                "Hide the scoreboard sidebar displayed on the right side of the screen",
+                "hideScoreboardSidebar", false);
         DISABLE_TELEMETRY = bool("declutterui.configuration.disableTelemetry",
                 "Disable all telemetry data collection",
                 "disableTelemetry", true);
