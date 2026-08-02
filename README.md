@@ -76,3 +76,4 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Boss Bars | Hides boss names and health bars displayed at the top of the screen *(off by default)* |
 | Hide Scoreboard Sidebar | Hides server scoreboards displayed on the right side of the screen *(off by default)* |
 | Hide Action Bar Messages | Hides server messages displayed above the hotbar *(off by default)* |
+| Hide Floating Hologram Text | Hides text displays and invisible armor-stand labels commonly used for server holograms *(off by default)* |

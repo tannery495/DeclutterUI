@@ -15,12 +15,15 @@ import net.minecraft.client.gui.screens.options.OptionsScreen;
 import net.minecraft.client.gui.screens.recipebook.RecipeUpdateListener;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.contents.TranslatableContents;
+import net.minecraft.util.TriState;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.ScreenEvent;
+import net.neoforged.neoforge.client.event.RenderNameTagEvent;
 import net.neoforged.neoforge.client.event.ToastAddEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
@@ -148,6 +151,16 @@ public class DeclutterClient {
             }
         }
         return null;
+    }
+
+    @SubscribeEvent
+    static void onRenderNameTag(RenderNameTagEvent.CanRender event) {
+        if (Config.HIDE_FLOATING_HOLOGRAM_TEXT.get()
+                && event.getEntity() instanceof ArmorStand armorStand
+                && armorStand.isInvisible()
+                && armorStand.hasCustomName()) {
+            event.setCanRender(TriState.FALSE);
+        }
     }
 
     private static void moveModsBesideOptions(Screen screen, AbstractWidget hiddenNeighbor) {

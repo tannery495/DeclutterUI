@@ -38,6 +38,7 @@
   "declutterui.configuration.hideBossBars": "Hide Boss Bars (Off by Default)",
   "declutterui.configuration.hideScoreboardSidebar": "Hide Scoreboard Sidebar (Off by Default)",
   "declutterui.configuration.hideActionBarMessages": "Hide Action Bar Messages (Off by Default)",
+  "declutterui.configuration.hideFloatingHologramText": "Hide Floating Hologram Text (Off by Default)",
   "declutterui.configuration.hideOnlineOptions": "Hide Online Options Button",
   "declutterui.configuration.hideSplashText": "Hide Yellow Splash Text (Title Screen)",
   "declutterui.configuration.hideCopyright": "Hide Copyright Notice (Title Screen)",

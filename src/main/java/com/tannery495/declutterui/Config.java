@@ -38,6 +38,7 @@ public class Config {
     public static final ModConfigSpec.BooleanValue HIDE_BOSS_BARS;
     public static final ModConfigSpec.BooleanValue HIDE_SCOREBOARD_SIDEBAR;
     public static final ModConfigSpec.BooleanValue HIDE_ACTION_BAR_MESSAGES;
+    public static final ModConfigSpec.BooleanValue HIDE_FLOATING_HOLOGRAM_TEXT;
     public static final ModConfigSpec.BooleanValue DISABLE_TELEMETRY;
 
     static final ModConfigSpec SPEC;
@@ -143,6 +144,9 @@ public class Config {
         HIDE_ACTION_BAR_MESSAGES = bool("declutterui.configuration.hideActionBarMessages",
                 "Hide action bar messages displayed above the hotbar",
                 "hideActionBarMessages", false);
+        HIDE_FLOATING_HOLOGRAM_TEXT = bool("declutterui.configuration.hideFloatingHologramText",
+                "Hide text displays and invisible armor stand nameplates commonly used for server holograms",
+                "hideFloatingHologramText", false);
         DISABLE_TELEMETRY = bool("declutterui.configuration.disableTelemetry",
                 "Disable all telemetry data collection",
                 "disableTelemetry", true);
