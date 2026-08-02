@@ -27,6 +27,7 @@ public class Config {
     public static final ModConfigSpec.BooleanValue SUPPRESS_UNSAFE_SERVER_TOAST;
     public static final ModConfigSpec.BooleanValue SUPPRESS_WORLD_BACKUP_TOAST;
     public static final ModConfigSpec.BooleanValue SUPPRESS_RESOURCE_PACK_ERROR_TOASTS;
+    public static final ModConfigSpec.BooleanValue HIDE_RESOURCE_PACK_DOWNLOAD_PROGRESS;
 
     public static final ModConfigSpec.BooleanValue HIDE_MULTIPLAYER_WARNING;
     public static final ModConfigSpec.BooleanValue SKIP_EXPERIMENTAL_WARNING;
@@ -112,6 +113,9 @@ public class Config {
         SUPPRESS_RESOURCE_PACK_ERROR_TOASTS = bool("declutterui.configuration.suppressResourcePackErrorToasts",
                 "Suppress resource pack load, copy, and file import failure popups",
                 "suppressResourcePackErrorToasts", false);
+        HIDE_RESOURCE_PACK_DOWNLOAD_PROGRESS = bool("declutterui.configuration.hideResourcePackDownloadProgress",
+                "Hide the resource pack download progress notification",
+                "hideResourcePackDownloadProgress", false);
         BUILDER.pop();
 
         BUILDER.translation("declutterui.configuration.category.warnings").push("warnings");
