@@ -42,8 +42,8 @@ Every option can be turned on or off individually in the in-game config screen.
 | Option | What it removes |
 |---|---|
 | Hide Give Feedback & Report Bugs Buttons | The two feedback link buttons |
-| Hide Player Reporting Button | The player reporting button (multiplayer only) |
-| Hide Open to LAN Button | The open to LAN button (singleplayer only) |
+| Hide Player Reporting Button | The player reporting button; Mods moves beside Options (multiplayer only) |
+| Hide Open to LAN Button | The Open to LAN button; Mods moves beside Options (singleplayer only) |
 
 ### Notifications
 

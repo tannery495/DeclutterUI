@@ -85,11 +85,15 @@ public class DeclutterClient {
         }
 
         if (screen instanceof net.minecraft.client.gui.screens.PauseScreen) {
+            AbstractWidget hiddenAdjacentButton = null;
             if (Config.HIDE_PLAYER_REPORTING.get()) {
-                hideWidgetByKey(screen, "menu.playerReporting");
+                hiddenAdjacentButton = hideWidgetByKey(screen, "menu.playerReporting");
             }
             if (Config.HIDE_OPEN_TO_LAN.get()) {
-                hideWidgetByKey(screen, "menu.shareToLan");
+                hiddenAdjacentButton = hideWidgetByKey(screen, "menu.shareToLan");
+            }
+            if (hiddenAdjacentButton != null) {
+                moveModsBesideOptions(screen, hiddenAdjacentButton);
             }
         }
 
@@ -135,14 +139,41 @@ public class DeclutterClient {
         }
     }
 
-    private static void hideWidgetByKey(Screen screen, String key) {
+    private static AbstractWidget hideWidgetByKey(Screen screen, String key) {
         for (GuiEventListener child : screen.children()) {
             if (child instanceof AbstractWidget widget && hasTranslationKey(widget.getMessage(), key)) {
                 widget.visible = false;
                 widget.active = false;
-                return;
+                return widget;
             }
         }
+        return null;
+    }
+
+    private static void moveModsBesideOptions(Screen screen, AbstractWidget hiddenNeighbor) {
+        AbstractWidget modsButton = findWidgetByKey(screen, "fml.menu.mods");
+        if (modsButton == null) return;
+
+        int vacatedRowY = modsButton.getY();
+        int rowShift = modsButton.getHeight() + 4;
+        modsButton.setX(hiddenNeighbor.getX());
+        modsButton.setY(hiddenNeighbor.getY());
+        modsButton.setWidth(hiddenNeighbor.getWidth());
+
+        for (GuiEventListener child : screen.children()) {
+            if (child instanceof AbstractWidget widget && widget != modsButton && widget.getY() > vacatedRowY) {
+                widget.setY(widget.getY() - rowShift);
+            }
+        }
+    }
+
+    private static AbstractWidget findWidgetByKey(Screen screen, String key) {
+        for (GuiEventListener child : screen.children()) {
+            if (child instanceof AbstractWidget widget && hasTranslationKey(widget.getMessage(), key)) {
+                return widget;
+            }
+        }
+        return null;
     }
 
     private static boolean hasTranslationKey(Component component, String key) {
