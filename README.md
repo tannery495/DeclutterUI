@@ -75,3 +75,4 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Selected Item Name Popup | Hides item names shown above the hotbar when changing slots *(off by default)* |
 | Hide Boss Bars | Hides boss names and health bars displayed at the top of the screen *(off by default)* |
 | Hide Scoreboard Sidebar | Hides server scoreboards displayed on the right side of the screen *(off by default)* |
+| Hide Action Bar Messages | Hides server messages displayed above the hotbar *(off by default)* |
