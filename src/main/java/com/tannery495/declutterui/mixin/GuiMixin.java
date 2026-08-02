@@ -25,4 +25,11 @@ public abstract class GuiMixin {
             ci.cancel();
         }
     }
+
+    @Inject(method = "renderOverlayMessage", at = @At("HEAD"), cancellable = true)
+    private void hideActionBarMessages(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+        if (Config.HIDE_ACTION_BAR_MESSAGES.get()) {
+            ci.cancel();
+        }
+    }
 }
