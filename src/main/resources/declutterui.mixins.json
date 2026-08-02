@@ -16,6 +16,7 @@
     "TitleScreenMixin",
     "GuiMixin",
     "BossHealthOverlayMixin",
+    "SystemToastMixin",
     "TextDisplayRendererMixin",
     "AccessibilityOnboardingScreenMixin",
     "BackupConfirmScreenMixin"

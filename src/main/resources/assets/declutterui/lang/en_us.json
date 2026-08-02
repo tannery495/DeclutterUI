@@ -28,6 +28,7 @@
   "declutterui.configuration.suppressUnsafeServerToast": "Hide Unsecure Server Warning Popup",
   "declutterui.configuration.suppressWorldBackupToast": "Hide World Backup Success Popup",
   "declutterui.configuration.suppressResourcePackErrorToasts": "Hide Resource Pack Error Popups (Off by Default)",
+  "declutterui.configuration.hideResourcePackDownloadProgress": "Hide Resource Pack Download Progress (Off by Default)",
   "declutterui.configuration.hideAccessibilityButton": "Hide Accessibility Icon (Title Screen)",
   "declutterui.configuration.hideLanguageButton": "Hide Language Button (Title Screen)",
   "declutterui.configuration.hideVersionText": "Hide Version Text (Off by Default)",

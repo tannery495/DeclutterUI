@@ -56,6 +56,7 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Unsecure Server Warning | The pop-up warning when joining a server without secure chat |
 | Hide World Backup Success Popup | The notification shown after a world backup completes |
 | Hide Resource Pack Error Popups | Resource-pack load, copy, and file-import failure notifications *(off by default)* |
+| Hide Resource Pack Download Progress | The resource-pack download progress notification *(off by default)* |
 
 ### Title Screen
 
