@@ -18,82 +18,68 @@
 
 Every option can be turned on or off individually in the in-game config screen.
 
-Hide Player Glow Outlines is off by default under HUD & Privacy. It suppresses
-player glow and spectator outlines locally; other entities keep their outlines.
+### Title Screen
 
-Tab-list options (all off by default under HUD & Privacy):
-- Hide Tab Header & Footer hides server banners and footer text.
-- Hide Tab Rank Tags removes team prefixes and suffixes, preserving nicknames where possible.
-- Show Account Usernames in Tab replaces server display names with account usernames.
-
-Player heads and ping icons remain visible. Custom tags embedded directly in display names
-may remain when only rank hiding is enabled; enable account usernames too for plain names.
-Server text inserted as fake player entries is not a header or footer and is unaffected.
-
-Version 1.0.4 adds Hide Player Profile Popups under HUD & Privacy, off by default.
-Hide Rank Tags Above Players is also off by default. It displays account usernames
-with their team color, removing nameplate prefixes, suffixes and nicknames.
-Separate server holograms are unaffected.
-It hides player entity tooltips and text tooltips linked to private-message commands
-in chat while preserving click actions. Custom server formats may not be detected.
+| Option | What it does | Default |
+|---|---|---|
+| Hide Realms Button | Hide the Realms button from the main menu and any Realms options from settings screens | ON |
+| Hide Accessibility Icon | Hide the accessibility shortcut button on the title screen | ON |
+| Hide Language Button | Hide the language shortcut button on the title screen | ON |
+| Hide Yellow Splash Text | Hide the yellow rotating splash text on the title screen | ON |
+| Hide Copyright Notice | Hide the copyright notice on the title screen | ON |
+| Hide Version Text | Hide the version and modded text in the bottom-left corner of the title screen | OFF |
 
 ### Menus & Buttons
 
-| Option | What it removes |
-|---|---|
-| Hide Realms Button | The "Minecraft Realms" button on the title screen |
-| Hide Online Options Button | The "Online Options" button in Settings |
-| Hide Credits & Attribution Button | The credits button in Settings |
-| Hide Accessibility Icon | The small accessibility icon on the title screen |
-| Hide Language Button | The language shortcut button on the title screen |
+| Option | What it does | Default |
+|---|---|---|
+| Hide Credits & Attribution Button | Hide the Credits & Attribution button from the Options screen | ON |
+| Hide Recipe Book Button | Hide the recipe book button from inventory and crafting screens | ON |
+| Hide Online Options Button | Hide the Online Options button from the Options screen | ON |
+
+### Pause Menu
+
+| Option | What it does | Default |
+|---|---|---|
+| Hide Give Feedback & Report Bugs Buttons | Hide the Give Feedback and Report Bugs buttons from the Game Menu | ON |
+| Hide Player Reporting Button | Hide the Player Reporting button from the Game Menu; Mods moves beside Options in multiplayer | ON |
+| Hide Open to LAN Button | Hide the Open to LAN button from the Game Menu; Mods moves beside Options in singleplayer | OFF |
+
+### Popups & Notifications
+
+| Option | What it does | Default |
+|---|---|---|
+| Hide Advancement Unlock Popups | Suppress advancement unlock toast notifications | ON |
+| Hide Recipe Unlock Popups | Suppress recipe unlock toast notifications | ON |
+| Hide Tutorial Hint Popups | Suppress tutorial hint toast notifications | ON |
+| Hide Narrator Toggle Popup | Suppress the narrator on/off toast notification | ON |
+| Hide Unsecure Server Warning Popup | Suppress the unsecure server warning toast | ON |
+| Hide World Backup Success Popup | Suppress the popup shown after a world backup completes | ON |
+| Hide Resource Pack Error Popups | Suppress resource pack load, copy, and file import failure popups | OFF |
+| Hide Resource Pack Download Progress | Hide the resource pack download progress notification | OFF |
 
 ### Warnings & Prompts
 
-| Option | What it removes |
-|---|---|
-| Skip Online Play Warning Screen | The "Caution: Third-Party Online Play" screen when clicking Multiplayer |
-| Skip Experimental World Warning | The confirmation screen when creating a world with experimental features |
-| Skip Narrator Setup Screen | The narrator/accessibility setup screen on first launch |
-| Skip World Upgrade Backup Screen | The backup prompt when loading a world from an older version *(off by default)* |
+| Option | What it does | Default |
+|---|---|---|
+| Skip Online Play Warning Screen | Skip the Caution: Third-Party Online Play warning screen | ON |
+| Skip Experimental World Warning | Skip the experimental features confirmation screen | ON |
+| Skip Narrator Setup Screen | Skip the accessibility setup screen that appears on first launch | ON |
+| Skip World Upgrade Backup Screen | Skip the world upgrade backup prompt | OFF |
 
-### Game Menu (Pause Screen)
+### HUD, Chat & Privacy
 
-| Option | What it removes |
-|---|---|
-| Hide Give Feedback & Report Bugs Buttons | The two feedback link buttons |
-| Hide Player Reporting Button | The player reporting button; Mods moves beside Options (multiplayer only) |
-| Hide Open to LAN Button | The Open to LAN button; Mods moves beside Options (singleplayer only) |
+| Option | What it does | Default |
+|---|---|---|
+| Hide Selected Item Name Popup | Hide item names shown above the hotbar when changing the selected item | OFF |
+| Hide Chat Message Indicators | Hide the colored indicator bars shown next to chat messages | ON |
+| Hide Player Profile Popups | Hide player entity tooltips and private-message-linked text tooltips in chat; custom server formats may not be detected; click actions are preserved | OFF |
+| Hide Rank Tags Above Players | Show only account usernames above players, removing rank prefixes, suffixes and nicknames; separate server holograms are unaffected; team color is preserved | OFF |
+| Hide Tab Header & Footer | Hide the server header and footer in the Tab player list; preserves server player names, nicknames, heads and ping icons. Fake player entries are unaffected | OFF |
+| Hide Player Glow Outlines | Hide glowing outlines on players, including spectator outlines; other entities are unaffected | OFF |
+| Hide Boss Bars | Hide boss names and health bars displayed at the top of the screen | OFF |
+| Hide Scoreboard Sidebar | Hide the scoreboard sidebar displayed on the right side of the screen | OFF |
+| Hide Action Bar Messages | Hide action bar messages displayed above the hotbar | OFF |
+| Hide Floating Hologram Text | Hide text displays and invisible armor stand nameplates commonly used for server holograms | OFF |
+| Turn Off Data Collection | Disable all telemetry data collection | ON |
 
-### Notifications
-
-| Option | What it removes |
-|---|---|
-| Hide Advancement Unlock Popups | The pop-up when you unlock an advancement |
-| Hide Recipe Unlock Popups | The pop-up when you unlock a new recipe |
-| Hide Tutorial Hint Popups | The pop-up hints that appear early in the game |
-| Hide Narrator Toggle Popup | The pop-up when turning the narrator on or off |
-| Hide Unsecure Server Warning | The pop-up warning when joining a server without secure chat |
-| Hide World Backup Success Popup | The notification shown after a world backup completes |
-| Hide Resource Pack Error Popups | Resource-pack load, copy, and file-import failure notifications *(off by default)* |
-| Hide Resource Pack Download Progress | The resource-pack download progress notification *(off by default)* |
-
-### Title Screen
-
-| Option | What it removes |
-|---|---|
-| Hide Yellow Splash Text | The rotating yellow "Random splash!" text next to the logo |
-| Hide Copyright Notice | The "Copyright Mojang AB. Do not distribute!" text |
-| Hide Version Text | The version and modded text in the bottom-left corner *(off by default)* |
-
-### Other
-
-| Option | What it does |
-|---|---|
-| Turn Off Data Collection | Disables Mojang's telemetry/data tracking |
-| Hide Recipe Book Button | Removes the recipe book button from inventory, crafting table, and furnace |
-| Hide Chat Message Indicators | Hides the colored bars shown next to chat messages |
-| Hide Selected Item Name Popup | Hides item names shown above the hotbar when changing slots *(off by default)* |
-| Hide Boss Bars | Hides boss names and health bars displayed at the top of the screen *(off by default)* |
-| Hide Scoreboard Sidebar | Hides server scoreboards displayed on the right side of the screen *(off by default)* |
-| Hide Action Bar Messages | Hides server messages displayed above the hotbar *(off by default)* |
-| Hide Floating Hologram Text | Hides text displays and invisible armor-stand labels commonly used for server holograms *(off by default)* |
