@@ -18,6 +18,25 @@
 
 Every option can be turned on or off individually in the in-game config screen.
 
+Hide Player Glow Outlines is off by default under HUD & Privacy. It suppresses
+player glow and spectator outlines locally; other entities keep their outlines.
+
+Tab-list options (all off by default under HUD & Privacy):
+- Hide Tab Header & Footer hides server banners and footer text.
+- Hide Tab Rank Tags removes team prefixes and suffixes, preserving nicknames where possible.
+- Show Account Usernames in Tab replaces server display names with account usernames.
+
+Player heads and ping icons remain visible. Custom tags embedded directly in display names
+may remain when only rank hiding is enabled; enable account usernames too for plain names.
+Server text inserted as fake player entries is not a header or footer and is unaffected.
+
+Version 1.0.4 adds Hide Player Profile Popups under HUD & Privacy, off by default.
+Hide Rank Tags Above Players is also off by default. It displays account usernames
+with their team color, removing nameplate prefixes, suffixes and nicknames.
+Separate server holograms are unaffected.
+It hides player entity tooltips and text tooltips linked to private-message commands
+in chat while preserving click actions. Custom server formats may not be detected.
+
 ### Menus & Buttons
 
 | Option | What it removes |
