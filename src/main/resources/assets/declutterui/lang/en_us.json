@@ -1,4 +1,9 @@
 {
+  "declutterui.configuration.hidePlayerGlowOutlines": "Hide Player Glow Outlines",
+  "declutterui.configuration.hideTabHeaderFooter": "Hide Tab Header & Footer",
+  "declutterui.configuration.hideTabRankTags": "Hide Tab Rank Tags",
+  "declutterui.configuration.showTabAccountNames": "Show Account Usernames in Tab",
+  "declutterui.configuration.hidePlayerRankTags": "Hide Rank Tags Above Players",
   "declutterui.configuration.hidePlayerProfilePopups": "Hide Player Profile Popups",
   "declutterui.configuration.title": "DeclutterUI Settings",
   "declutterui.configuration.section.declutterui-common.toml": "DeclutterUI Settings",

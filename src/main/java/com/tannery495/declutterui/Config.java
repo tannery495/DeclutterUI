@@ -37,6 +37,11 @@ public class Config {
     public static final ModConfigSpec.BooleanValue HIDE_SELECTED_ITEM_NAME;
     public static final ModConfigSpec.BooleanValue HIDE_CHAT_INDICATORS;
     public static final ModConfigSpec.BooleanValue HIDE_PLAYER_PROFILE_POPUPS;
+    public static final ModConfigSpec.BooleanValue HIDE_PLAYER_RANK_TAGS;
+    public static final ModConfigSpec.BooleanValue HIDE_PLAYER_GLOW_OUTLINES;
+    public static final ModConfigSpec.BooleanValue HIDE_TAB_HEADER_FOOTER;
+    public static final ModConfigSpec.BooleanValue HIDE_TAB_RANK_TAGS;
+    public static final ModConfigSpec.BooleanValue SHOW_TAB_ACCOUNT_NAMES;
     public static final ModConfigSpec.BooleanValue HIDE_BOSS_BARS;
     public static final ModConfigSpec.BooleanValue HIDE_SCOREBOARD_SIDEBAR;
     public static final ModConfigSpec.BooleanValue HIDE_ACTION_BAR_MESSAGES;
@@ -147,9 +152,15 @@ public class Config {
         HIDE_PLAYER_RANK_TAGS = bool("declutterui.configuration.hidePlayerRankTags",
                 "Show only account usernames above players, removing rank prefixes, suffixes and nicknames; separate server holograms are unaffected",
                 "hidePlayerRankTags", false);
+        HIDE_TAB_HEADER_FOOTER = bool("declutterui.configuration.hideTabHeaderFooter",
+                "Hide the server header and footer in the Tab player list",
+                "hideTabHeaderFooter", false);
         HIDE_TAB_RANK_TAGS = bool("declutterui.configuration.hideTabRankTags",
                 "Remove team prefixes and suffixes in Tab; custom server tags not matching team decorations may remain",
                 "hideTabRankTags", false);
+        SHOW_TAB_ACCOUNT_NAMES = bool("declutterui.configuration.showTabAccountNames",
+                "Use account usernames in Tab instead of server nicknames",
+                "showTabAccountNames", false);
         HIDE_PLAYER_GLOW_OUTLINES = bool("declutterui.configuration.hidePlayerGlowOutlines",
                 "Hide glowing outlines on players, including spectator outlines; other entities are unaffected",
                 "hidePlayerGlowOutlines", false);

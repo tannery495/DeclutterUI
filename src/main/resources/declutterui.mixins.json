@@ -5,6 +5,7 @@
   "client": [
     "RealmsNotificationsScreenMixin",
     "MinecraftTelemetryMixin",
+    "PlayerGlowMixin",
     "OptionsScreenMixin",
     "SafetyScreenAccessor",
     "WarningScreenMixin",
@@ -13,6 +14,7 @@
     "RecipeBookComponentMixin",
     "PauseScreenMixin",
     "ChatComponentMixin",
+    "PlayerTabOverlayMixin",
     "PlayerProfilePopupMixin",
     "TitleScreenMixin",
     "GuiMixin",

@@ -158,6 +158,14 @@ public class DeclutterClient {
 
     @SubscribeEvent
     static void onRenderNameTag(RenderNameTagEvent event) {
+        if (Config.HIDE_PLAYER_RANK_TAGS.get()
+                && event.getEntity() instanceof net.minecraft.world.entity.player.Player player) {
+            // Replace only the rendered nameplate; retain its team color and vanilla visibility rules.
+            var name = Component.literal(player.getGameProfile().getName());
+            var team = player.getTeam();
+            if (team != null) name.withStyle(team.getColor());
+            event.setContent(name);
+        }
         if (Config.HIDE_FLOATING_HOLOGRAM_TEXT.get()
                 && event.getEntity() instanceof ArmorStand armorStand
                 && armorStand.isInvisible()
