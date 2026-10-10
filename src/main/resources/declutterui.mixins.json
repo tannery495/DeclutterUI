@@ -3,6 +3,10 @@
   "package": "com.tannery495.declutterui.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "ConfigurationSectionScreenAccessor",
+    "ConfigurationFooterMixin",
+    "ConfigurationOptionsListMixin",
+    "ConfigurationOptionEntryMixin",
     "RealmsNotificationsScreenMixin",
     "MinecraftTelemetryMixin",
     "PlayerGlowMixin",
