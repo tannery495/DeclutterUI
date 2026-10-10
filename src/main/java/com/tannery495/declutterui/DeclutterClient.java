@@ -93,7 +93,10 @@ public class DeclutterClient {
                 hiddenAdjacentButton = hideWidgetByKey(screen, "menu.playerReporting");
             }
             if (Config.HIDE_OPEN_TO_LAN.get()) {
-                hiddenAdjacentButton = hideWidgetByKey(screen, "menu.shareToLan");
+                AbstractWidget lanButton = hideWidgetByKey(screen, "menu.shareToLan");
+                // Multiplayer uses Player Reporting in this slot instead of Open to LAN.
+                // An absent LAN button must not discard the hidden reporting button.
+                if (lanButton != null) hiddenAdjacentButton = lanButton;
             }
             if (hiddenAdjacentButton != null) {
                 moveModsBesideOptions(screen, hiddenAdjacentButton);
