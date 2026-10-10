@@ -1,4 +1,5 @@
 {
+  "declutterui.configuration.hidePlayerProfilePopups": "Hide Player Profile Popups",
   "declutterui.configuration.title": "DeclutterUI Settings",
   "declutterui.configuration.section.declutterui-common.toml": "DeclutterUI Settings",
   "declutterui.configuration.section.declutterui-common.toml.title": "DeclutterUI Settings",

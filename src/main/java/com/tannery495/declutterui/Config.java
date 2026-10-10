@@ -36,6 +36,7 @@ public class Config {
 
     public static final ModConfigSpec.BooleanValue HIDE_SELECTED_ITEM_NAME;
     public static final ModConfigSpec.BooleanValue HIDE_CHAT_INDICATORS;
+    public static final ModConfigSpec.BooleanValue HIDE_PLAYER_PROFILE_POPUPS;
     public static final ModConfigSpec.BooleanValue HIDE_BOSS_BARS;
     public static final ModConfigSpec.BooleanValue HIDE_SCOREBOARD_SIDEBAR;
     public static final ModConfigSpec.BooleanValue HIDE_ACTION_BAR_MESSAGES;
@@ -140,6 +141,18 @@ public class Config {
         HIDE_CHAT_INDICATORS = bool("declutterui.configuration.hideChatIndicators",
                 "Hide the colored indicator bars shown next to chat messages",
                 "hideChatIndicators", true);
+        HIDE_PLAYER_PROFILE_POPUPS = bool("declutterui.configuration.hidePlayerProfilePopups",
+                "Hide player entity tooltips and private-message-linked text tooltips in chat; custom server formats may not be detected",
+                "hidePlayerProfilePopups", false);
+        HIDE_PLAYER_RANK_TAGS = bool("declutterui.configuration.hidePlayerRankTags",
+                "Show only account usernames above players, removing rank prefixes, suffixes and nicknames; separate server holograms are unaffected",
+                "hidePlayerRankTags", false);
+        HIDE_TAB_RANK_TAGS = bool("declutterui.configuration.hideTabRankTags",
+                "Remove team prefixes and suffixes in Tab; custom server tags not matching team decorations may remain",
+                "hideTabRankTags", false);
+        HIDE_PLAYER_GLOW_OUTLINES = bool("declutterui.configuration.hidePlayerGlowOutlines",
+                "Hide glowing outlines on players, including spectator outlines; other entities are unaffected",
+                "hidePlayerGlowOutlines", false);
         HIDE_BOSS_BARS = bool("declutterui.configuration.hideBossBars",
                 "Hide boss names and health bars displayed at the top of the screen",
                 "hideBossBars", false);

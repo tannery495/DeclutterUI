@@ -13,6 +13,7 @@
     "RecipeBookComponentMixin",
     "PauseScreenMixin",
     "ChatComponentMixin",
+    "PlayerProfilePopupMixin",
     "TitleScreenMixin",
     "GuiMixin",
     "BossHealthOverlayMixin",
