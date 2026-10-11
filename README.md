@@ -22,6 +22,7 @@ Every option can be turned on or off individually in the in-game config screen.
 
 | Option | What it removes |
 |---|---|
+| Hide Server Description | Server description text in the multiplayer list; names, player counts, ping and connection errors remain visible *(off by default)* |
 | Hide Realms Button | The "Minecraft Realms" button on the title screen |
 | Hide Online Options Button | The "Online Options" button in Settings |
 | Hide Credits & Attribution Button | The credits button in Settings |

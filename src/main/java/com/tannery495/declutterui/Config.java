@@ -15,6 +15,7 @@ public class Config {
     public static final ModConfigSpec.BooleanValue HIDE_CREDITS;
     public static final ModConfigSpec.BooleanValue HIDE_RECIPE_BOOK;
     public static final ModConfigSpec.BooleanValue HIDE_ONLINE_OPTIONS;
+    public static final ModConfigSpec.BooleanValue HIDE_SERVER_DESCRIPTION;
 
     public static final ModConfigSpec.BooleanValue HIDE_FEEDBACK_BUTTONS;
     public static final ModConfigSpec.BooleanValue HIDE_PLAYER_REPORTING;
@@ -77,6 +78,9 @@ public class Config {
         HIDE_ONLINE_OPTIONS = bool("declutterui.configuration.hideOnlineOptions",
                 "Hide the Online Options button from the Options screen",
                 "hideOnlineOptions", true);
+        HIDE_SERVER_DESCRIPTION = bool("declutterui.configuration.hideServerDescription",
+                "Hide server description text in the multiplayer list; server names, player counts, ping and connection errors remain visible",
+                "hideServerDescription", false);
         BUILDER.pop();
 
         BUILDER.translation("declutterui.configuration.category.pauseMenu").push("pauseMenu");
