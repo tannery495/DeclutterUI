@@ -43,6 +43,7 @@ public class Config {
     public static final ModConfigSpec.BooleanValue HIDE_FLOATING_HOLOGRAM_TEXT;
 
     public static final ModConfigSpec.BooleanValue DISABLE_TELEMETRY;
+    public static final ModConfigSpec.BooleanValue HIDE_PLAYER_PROFILE_POPUPS;
 
     static final ModConfigSpec SPEC;
 
@@ -159,6 +160,12 @@ public class Config {
         DISABLE_TELEMETRY = bool("declutterui.configuration.disableTelemetry",
                 "Disable all telemetry data collection",
                 "disableTelemetry", true);
+        BUILDER.pop();
+
+        BUILDER.translation("declutterui.configuration.category.experimental").push("experimental");
+        HIDE_PLAYER_PROFILE_POPUPS = bool("declutterui.configuration.hidePlayerProfilePopups",
+                "Hide player details when you hover over names in chat.",
+                "hidePlayerProfilePopups", false);
         BUILDER.pop();
 
         SPEC = BUILDER.build();

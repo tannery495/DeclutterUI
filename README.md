@@ -18,6 +18,12 @@
 
 Every option can be turned on or off individually in the in-game config screen.
 
+### Experimental
+
+| Option | What it does |
+|---|---|
+| Hide Player Info in Chat | Hide player details when you hover over names in chat. *(off by default)* |
+
 ### Menus & Buttons
 
 | Option | What it removes |

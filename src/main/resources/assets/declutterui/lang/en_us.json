@@ -1,4 +1,7 @@
 {
+  "declutterui.configuration.category.experimental": "Experimental",
+  "declutterui.configuration.category.experimental.button": "Open",
+  "declutterui.configuration.hidePlayerProfilePopups": "Hide Player Info in Chat",
   "declutterui.configuration.hideServerDescription": "Hide Server Description",
   "declutterui.configuration.title": "DeclutterUI Settings",
   "declutterui.configuration.section.declutterui-common.toml": "DeclutterUI Settings",
