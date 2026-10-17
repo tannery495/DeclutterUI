@@ -38,6 +38,7 @@ public class Config {
     public static final ModConfigSpec.BooleanValue HIDE_SELECTED_ITEM_NAME;
     public static final ModConfigSpec.BooleanValue HIDE_CHAT_INDICATORS;
     public static final ModConfigSpec.BooleanValue HIDE_TAB_HEADER_FOOTER;
+    public static final ModConfigSpec.BooleanValue HIDE_GLOWING_OUTLINES;
     public static final ModConfigSpec.BooleanValue HIDE_BOSS_BARS;
     public static final ModConfigSpec.BooleanValue HIDE_SCOREBOARD_SIDEBAR;
     public static final ModConfigSpec.BooleanValue HIDE_ACTION_BAR_MESSAGES;
@@ -149,6 +150,9 @@ public class Config {
         HIDE_TAB_HEADER_FOOTER = bool("declutterui.configuration.hideTabHeaderFooter",
                 "Hide server messages above and below the list shown when you hold Tab.",
                 "hideTabHeaderFooter", false);
+        HIDE_GLOWING_OUTLINES = bool("declutterui.configuration.hideGlowingOutlines",
+                "Hide glowing outlines around players, animals, and other creatures.",
+                "hideGlowingOutlines", false);
         HIDE_BOSS_BARS = bool("declutterui.configuration.hideBossBars",
                 "Hide boss names and health bars displayed at the top of the screen",
                 "hideBossBars", false);

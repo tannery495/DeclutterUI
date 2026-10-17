@@ -1,4 +1,5 @@
 {
+  "declutterui.configuration.hideGlowingOutlines": "Hide Glowing Outlines",
   "declutterui.configuration.hideTabHeaderFooter": "Hide Text Above and Below Player List",
   "declutterui.configuration.category.experimental": "Experimental",
   "declutterui.configuration.category.experimental.button": "Open",

@@ -3,6 +3,7 @@
   "package": "com.tannery495.declutterui.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "GlowingOutlinesMixin",
     "PlayerTabOverlayMixin",
     "PlayerProfilePopupMixin",
     "ServerDescriptionMixin",

@@ -81,6 +81,7 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Recipe Book Button | Removes the recipe book button from inventory, crafting table, and furnace |
 | Hide Chat Message Indicators | Hides the colored bars shown next to chat messages |
 | Hide Text Above and Below Player List | Hide server messages above and below the list shown when you hold Tab. *(off by default)* |
+| Hide Glowing Outlines | Hide glowing outlines around players, animals, and other creatures. *(off by default)* |
 | Hide Selected Item Name Popup | Hides item names shown above the hotbar when changing slots *(off by default)* |
 | Hide Boss Bars | Hides boss names and health bars displayed at the top of the screen *(off by default)* |
 | Hide Scoreboard Sidebar | Hides server scoreboards displayed on the right side of the screen *(off by default)* |
