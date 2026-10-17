@@ -1,4 +1,5 @@
 {
+  "declutterui.configuration.hideTabHeaderFooter": "Hide Text Above and Below Player List",
   "declutterui.configuration.category.experimental": "Experimental",
   "declutterui.configuration.category.experimental.button": "Open",
   "declutterui.configuration.hidePlayerProfilePopups": "Hide Player Info in Chat",
