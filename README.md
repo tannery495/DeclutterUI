@@ -18,12 +18,6 @@
 
 Every option can be turned on or off individually in the in-game config screen.
 
-### Experimental
-
-| Option | What it does |
-|---|---|
-| Hide Player Info in Chat | Hide player details when you hover over names in chat. *(off by default)* |
-
 ### Menus & Buttons
 
 | Option | What it removes |
@@ -62,7 +56,7 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Narrator Toggle Popup | The pop-up when turning the narrator on or off |
 | Hide Unsecure Server Warning | The pop-up warning when joining a server without secure chat |
 | Hide World Backup Success Popup | The notification shown after a world backup completes |
-| Hide Resource Pack Error Popups | Resource-pack load, copy, and file-import failure notifications *(off by default)* |
+| Hide Resource Pack Error Popups | Resource-pack load, copy, file-import, and server pack download failure notifications *(off by default)* |
 | Hide Resource Pack Download Progress | The resource-pack download progress notification *(off by default)* |
 
 ### Title Screen
@@ -85,5 +79,19 @@ Every option can be turned on or off individually in the in-game config screen.
 | Hide Selected Item Name Popup | Hides item names shown above the hotbar when changing slots *(off by default)* |
 | Hide Boss Bars | Hides boss names and health bars displayed at the top of the screen *(off by default)* |
 | Hide Scoreboard Sidebar | Hides server scoreboards displayed on the right side of the screen *(off by default)* |
+| Hide Below-Name Scores | Hides scores servers show under player names, such as health or kills *(off by default)* |
+| Hide Scoreboard Numbers | Hides the numbers in the right column of the scoreboard sidebar; the panel stays and shrinks to fit *(off by default)* |
+| Hide Player Name Tags | Hides names above other players and player-like NPCs, including names servers draw with entities riding the player. Chat, the Tab list, and named pets are unaffected *(off by default)* |
 | Hide Action Bar Messages | Hides server messages displayed above the hotbar *(off by default)* |
+| Hide Titles | Hides title and subtitle text displayed in the center of the screen *(off by default)* |
 | Hide Floating Hologram Text | Hides text displays and invisible armor-stand labels commonly used for server holograms *(off by default)* |
+
+### Chat Filter
+
+| Option | What it does |
+|---|---|
+| Hidden Chat Phrases | Hides chat messages containing any of these phrases, e.g. server reward or ad messages. Not case-sensitive; empty by default |
+| Hidden Chat Tags | Rank tags such as `OWNER` or `[VIP]` removed from the sender part of chat messages (before the `:`, `»` or `>`), so words in the message itself are kept. Not case-sensitive, and also matches small-caps lettering like `ᴏᴡɴᴇʀ`. Empty by default |
+| Also Hide Matching Player Messages | Also applies the phrases to messages typed by other players *(off by default)* |
+| Also Remove Tags Above Heads | Also removes the hidden chat tags from names above heads *(off by default)* |
+| Hide Player Info in Chat | Hides player details when you hover over names in chat *(off by default)* |

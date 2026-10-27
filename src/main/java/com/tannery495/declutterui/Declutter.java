@@ -40,6 +40,7 @@ public class Declutter {
         addCategory(categories, "warnings", "hideMultiplayerWarning", "skipExperimentalWarning",
                 "skipAccessibilityOnboarding", "skipWorldUpgradeBackup");
         addCategory(categories, "hudPrivacy", "hideSelectedItemName", "hideChatIndicators", "disableTelemetry");
+        addCategory(categories, "chat", "hidePlayerProfilePopups");
 
         try (CommentedFileConfig config = CommentedFileConfig.builder(path).sync().build()) {
             config.load();
@@ -52,6 +53,15 @@ public class Declutter {
                     config.remove(oldKey);
                     changed = true;
                 }
+            }
+            // 1.0.4 moved Hide Player Info in Chat from the removed Experimental section to Chat Filter.
+            if (config.contains("experimental.hidePlayerProfilePopups") && !config.contains("chat.hidePlayerProfilePopups")) {
+                config.set("chat.hidePlayerProfilePopups", config.get("experimental.hidePlayerProfilePopups"));
+                changed = true;
+            }
+            if (config.contains("experimental")) {
+                config.remove("experimental");
+                changed = true;
             }
             if (changed) {
                 config.save();

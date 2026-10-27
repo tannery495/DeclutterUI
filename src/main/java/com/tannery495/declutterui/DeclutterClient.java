@@ -13,7 +13,12 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.client.gui.screens.options.OptionsScreen;
 import net.minecraft.client.gui.screens.recipebook.RecipeUpdateListener;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
+import com.tannery495.declutterui.mixin.OptionsSubScreenInvoker;
+import net.minecraft.client.gui.screens.options.OptionsSubScreen;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.neoforged.api.distmarker.Dist;
@@ -22,6 +27,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.ScreenEvent;
+import net.neoforged.neoforge.client.event.ClientChatReceivedEvent;
 import net.neoforged.neoforge.client.event.RenderNameTagEvent;
 import net.neoforged.neoforge.common.util.TriState;
 import net.neoforged.neoforge.client.event.ToastAddEvent;
@@ -33,6 +39,20 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 public class DeclutterClient {
     public DeclutterClient(ModContainer container) {
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+    }
+
+    @SubscribeEvent
+    static void onChatReceived(ClientChatReceivedEvent event) {
+        if (ChatFilter.shouldHide(event)) {
+            event.setCanceled(true);
+            return;
+        }
+        // Action bar text arrives as an overlay system message; tags are only removed from chat lines.
+        if (event instanceof ClientChatReceivedEvent.System system && system.isOverlay()) return;
+        Component stripped = ChatTags.strip(event.getMessage(), true);
+        if (stripped != null) {
+            event.setMessage(stripped);
+        }
     }
 
     @SubscribeEvent
@@ -66,8 +86,22 @@ public class DeclutterClient {
     }
 
     @SubscribeEvent
+    static void onScreenRender(ScreenEvent.Render.Post event) {
+        String listKey = ListEditorStyle.listKey(event.getScreen());
+        if (listKey != null) {
+            ListEditorStyle.renderHelp(event.getGuiGraphics(), Minecraft.getInstance().font, event.getScreen(), listKey);
+        }
+    }
+
+    @SubscribeEvent
     static void onScreenInit(ScreenEvent.Init.Post event) {
         Screen screen = event.getScreen();
+
+        // DeclutterUI's list editors get a taller header so one line of help fits under the title.
+        if (ListEditorStyle.listKey(screen) != null && screen instanceof OptionsSubScreen options) {
+            options.layout.setHeaderHeight(ListEditorStyle.HEADER_HEIGHT);
+            ((OptionsSubScreenInvoker) screen).declutterui$repositionElements();
+        }
 
         if (Config.HIDE_RECIPE_BOOK.get() && screen instanceof RecipeUpdateListener) {
             for (GuiEventListener child : screen.children()) {
@@ -88,12 +122,25 @@ public class DeclutterClient {
         }
 
         if (screen instanceof net.minecraft.client.gui.screens.PauseScreen) {
+            // Servers that send links get a Feedback... submenu button in place of the two feedback buttons.
+            if (Config.HIDE_FEEDBACK_BUTTONS.get()) {
+                AbstractWidget feedback = hideWidgetByKey(screen, "menu.feedback");
+                AbstractWidget serverLinks = feedback == null ? null : findWidgetByKey(screen, "menu.server_links");
+                if (serverLinks != null) {
+                    int right = serverLinks.getRight();
+                    serverLinks.setX(feedback.getX());
+                    serverLinks.setWidth(right - feedback.getX());
+                }
+            }
+
             AbstractWidget hiddenAdjacentButton = null;
             if (Config.HIDE_PLAYER_REPORTING.get()) {
                 hiddenAdjacentButton = hideWidgetByKey(screen, "menu.playerReporting");
             }
             if (Config.HIDE_OPEN_TO_LAN.get()) {
-                hiddenAdjacentButton = hideWidgetByKey(screen, "menu.shareToLan");
+                // Multiplayer has no LAN button; keep the Player Reporting slot in that case.
+                AbstractWidget lanButton = hideWidgetByKey(screen, "menu.shareToLan");
+                if (lanButton != null) hiddenAdjacentButton = lanButton;
             }
             if (hiddenAdjacentButton != null) {
                 moveModsBesideOptions(screen, hiddenAdjacentButton);
@@ -120,7 +167,9 @@ public class DeclutterClient {
             realmsWidget.visible = false;
             realmsWidget.active = false;
             for (GuiEventListener child : screen.children()) {
-                if (child instanceof AbstractWidget widget && widget != realmsWidget && widget.getY() > realmsY) {
+                // Leave bottom-anchored text (the copyright line) where it is.
+                if (child instanceof AbstractWidget widget && widget != realmsWidget && widget.getY() > realmsY
+                        && widget.getBottom() < screen.height) {
                     widget.setY(widget.getY() - shift);
                 }
             }
@@ -155,12 +204,27 @@ public class DeclutterClient {
 
     @SubscribeEvent
     static void onRenderNameTag(RenderNameTagEvent event) {
+        // Covers players, player-like NPCs, and name-tag entities that servers mount on players.
+        if (Config.HIDE_PLAYER_NAME_TAGS.get() && isPlayerOrRidesPlayer(event.getEntity())) {
+            event.setCanRender(TriState.FALSE);
+            return;
+        }
+        if (Config.REMOVE_TAGS_ABOVE_HEADS.get()) {
+            Component stripped = ChatTags.strip(event.getContent(), false);
+            if (stripped != null) {
+                event.setContent(stripped);
+            }
+        }
         if (Config.HIDE_FLOATING_HOLOGRAM_TEXT.get()
                 && event.getEntity() instanceof ArmorStand armorStand
                 && armorStand.isInvisible()
                 && armorStand.hasCustomName()) {
             event.setCanRender(TriState.FALSE);
         }
+    }
+
+    public static boolean isPlayerOrRidesPlayer(Entity entity) {
+        return entity instanceof Player || (entity.isPassenger() && entity.getRootVehicle() instanceof Player);
     }
 
     private static void moveModsBesideOptions(Screen screen, AbstractWidget hiddenNeighbor) {

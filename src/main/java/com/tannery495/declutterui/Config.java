@@ -2,6 +2,8 @@ package com.tannery495.declutterui;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 
+import java.util.List;
+
 public class Config {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
@@ -41,11 +43,20 @@ public class Config {
     public static final ModConfigSpec.BooleanValue HIDE_GLOWING_OUTLINES;
     public static final ModConfigSpec.BooleanValue HIDE_BOSS_BARS;
     public static final ModConfigSpec.BooleanValue HIDE_SCOREBOARD_SIDEBAR;
+    public static final ModConfigSpec.BooleanValue HIDE_BELOW_NAME_SCORES;
+    public static final ModConfigSpec.BooleanValue HIDE_SCOREBOARD_NUMBERS;
+    public static final ModConfigSpec.BooleanValue HIDE_PLAYER_NAME_TAGS;
     public static final ModConfigSpec.BooleanValue HIDE_ACTION_BAR_MESSAGES;
+    public static final ModConfigSpec.BooleanValue HIDE_TITLES;
     public static final ModConfigSpec.BooleanValue HIDE_FLOATING_HOLOGRAM_TEXT;
 
     public static final ModConfigSpec.BooleanValue DISABLE_TELEMETRY;
     public static final ModConfigSpec.BooleanValue HIDE_PLAYER_PROFILE_POPUPS;
+
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> HIDDEN_CHAT_PHRASES;
+    public static final ModConfigSpec.BooleanValue HIDE_MATCHING_PLAYER_MESSAGES;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> HIDDEN_CHAT_TAGS;
+    public static final ModConfigSpec.BooleanValue REMOVE_TAGS_ABOVE_HEADS;
 
     static final ModConfigSpec SPEC;
 
@@ -118,7 +129,7 @@ public class Config {
                 "Suppress the popup shown after a world backup completes",
                 "suppressWorldBackupToast", true);
         SUPPRESS_RESOURCE_PACK_ERROR_TOASTS = bool("declutterui.configuration.suppressResourcePackErrorToasts",
-                "Suppress resource pack load, copy, and file import failure popups",
+                "Suppress resource pack load, copy, file import, and server pack download failure popups",
                 "suppressResourcePackErrorToasts", false);
         HIDE_RESOURCE_PACK_DOWNLOAD_PROGRESS = bool("declutterui.configuration.hideResourcePackDownloadProgress",
                 "Hide the resource pack download progress notification",
@@ -159,9 +170,21 @@ public class Config {
         HIDE_SCOREBOARD_SIDEBAR = bool("declutterui.configuration.hideScoreboardSidebar",
                 "Hide the scoreboard sidebar displayed on the right side of the screen",
                 "hideScoreboardSidebar", false);
+        HIDE_BELOW_NAME_SCORES = bool("declutterui.configuration.hideBelowNameScores",
+                "Hide the scores servers show under player names, such as health or kills",
+                "hideBelowNameScores", false);
+        HIDE_SCOREBOARD_NUMBERS = bool("declutterui.configuration.hideScoreboardNumbers",
+                "Hide the numbers in the right column of the scoreboard sidebar; the panel itself stays",
+                "hideScoreboardNumbers", false);
+        HIDE_PLAYER_NAME_TAGS = bool("declutterui.configuration.hidePlayerNameTags",
+                "Hide the names above other players and player-like NPCs, including names drawn by entities riding them",
+                "hidePlayerNameTags", false);
         HIDE_ACTION_BAR_MESSAGES = bool("declutterui.configuration.hideActionBarMessages",
                 "Hide action bar messages displayed above the hotbar",
                 "hideActionBarMessages", false);
+        HIDE_TITLES = bool("declutterui.configuration.hideTitles",
+                "Hide title and subtitle text displayed in the center of the screen",
+                "hideTitles", false);
         HIDE_FLOATING_HOLOGRAM_TEXT = bool("declutterui.configuration.hideFloatingHologramText",
                 "Hide text displays and invisible armor stand nameplates commonly used for server holograms",
                 "hideFloatingHologramText", false);
@@ -170,7 +193,19 @@ public class Config {
                 "disableTelemetry", true);
         BUILDER.pop();
 
-        BUILDER.translation("declutterui.configuration.category.experimental").push("experimental");
+        BUILDER.translation("declutterui.configuration.category.chat").push("chat");
+        HIDDEN_CHAT_PHRASES = BUILDER.translation("declutterui.configuration.hiddenChatPhrases")
+                .comment("Chat messages containing any of these phrases are hidden (not case-sensitive)")
+                .defineListAllowEmpty("hiddenChatPhrases", List.of(), () -> "", o -> o instanceof String);
+        HIDDEN_CHAT_TAGS = BUILDER.translation("declutterui.configuration.hiddenChatTags")
+                .comment("Rank tags removed from the sender part of chat messages, e.g. OWNER or [VIP] (not case-sensitive)")
+                .defineListAllowEmpty("hiddenChatTags", List.of(), () -> "", o -> o instanceof String);
+        HIDE_MATCHING_PLAYER_MESSAGES = bool("declutterui.configuration.hideMatchingPlayerMessages",
+                "Also hide messages typed by other players that contain a hidden phrase",
+                "hideMatchingPlayerMessages", false);
+        REMOVE_TAGS_ABOVE_HEADS = bool("declutterui.configuration.removeTagsAboveHeads",
+                "Also remove the hidden chat tags from names shown above heads",
+                "removeTagsAboveHeads", false);
         HIDE_PLAYER_PROFILE_POPUPS = bool("declutterui.configuration.hidePlayerProfilePopups",
                 "Hide player details when you hover over names in chat.",
                 "hidePlayerProfilePopups", false);

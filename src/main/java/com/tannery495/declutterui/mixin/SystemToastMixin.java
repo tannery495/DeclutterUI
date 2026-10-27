@@ -14,12 +14,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(SystemToast.class)
 public abstract class SystemToastMixin {
     @Inject(method = "addOrUpdate", at = @At("HEAD"), cancellable = true)
-    private static void declutterui$hideResourcePackDownloadProgress(
+    private static void declutterui$hideResourcePackDownloadToasts(
             ToastComponent toastManager, SystemToast.SystemToastId id,
             Component title, @Nullable Component message, CallbackInfo ci) {
-        if (Config.HIDE_RESOURCE_PACK_DOWNLOAD_PROGRESS.get()
-                && title.getContents() instanceof TranslatableContents contents
-                && contents.getKey().equals("download.pack.title")) {
+        if (!(title.getContents() instanceof TranslatableContents contents)) return;
+        if (Config.HIDE_RESOURCE_PACK_DOWNLOAD_PROGRESS.get() && contents.getKey().equals("download.pack.title")) {
+            ci.cancel();
+        } else if (Config.SUPPRESS_RESOURCE_PACK_ERROR_TOASTS.get() && contents.getKey().equals("download.pack.failed")) {
+            // The failure reuses the progress toast; close it too so the last percentage doesn't linger.
+            SystemToast.forceHide(toastManager, id);
             ci.cancel();
         }
     }
