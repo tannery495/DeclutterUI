@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "com.tannery495.declutterui.testmod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "NoChatSpamKickMixin"
+  ],
+  "minVersion": "0.8"
+}

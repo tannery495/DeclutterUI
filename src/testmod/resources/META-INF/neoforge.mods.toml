@@ -1,0 +1,15 @@
+# Dev-only helper mod loaded by the "server" run config. Never packaged into the release jar.
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="declutteruitest"
+version="1.0.0"
+displayName="DeclutterUI Test Server Helper"
+description='''
+Adds /dtest to trigger every HUD element DeclutterUI can hide.
+'''
+
+[[mixins]]
+config="declutteruitest.mixins.json"

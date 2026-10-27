@@ -25,6 +25,14 @@ sourceSets.main.resources {
     exclude("src/generated/**/.cache") // datagen cache files
 }
 
+// Dev-only helper mod for the server run config; not included in the release jar.
+sourceSets {
+    testmod {
+        compileClasspath += sourceSets.main.compileClasspath + sourceSets.main.output
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+    }
+}
+
 repositories {
     // Add here additional repositories if required by some of the dependencies below.
 }
@@ -69,6 +77,18 @@ runs {
     server {
         systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         argument '--nogui'
+
+        // Dev-only /dtest helper for testing DeclutterUI against a real server (see src/testmod)
+        modSources.add('declutteruitest', project.sourceSets.testmod)
+    }
+
+    // Joins the local test server (start it with runServer first) and screenshots every
+    // DeclutterUI option off vs on. Results land in run/autotestClient/autotest/.
+    autotestClient {
+        runType 'client'
+        systemProperty 'declutterui.autotest', 'true'
+        programArguments '--quickPlayMultiplayer', 'localhost:25565', '--width', '1280', '--height', '720'
+        modSources.add('declutteruitest', project.sourceSets.testmod)
     }
 
     // This run config launches GameTestServer and runs all registered gametests, then exits.
@@ -94,6 +114,7 @@ runs {
 configurations {
     runtimeClasspath.extendsFrom localRuntime
 }
+
 
 dependencies {
     // Specify the version of Minecraft to use.
